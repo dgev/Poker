@@ -14,8 +14,10 @@ public class Deck {
 	public static int rank = 13;
 	public static int numberOfCards = suit*rank;
 
+	//representing the cards as Dictionary each having its corresponding "name"
 	Dictionary<String, Card> cards = new Dictionary<String, Card>(numberOfCards);
 
+	//initializing the deck
 	public Deck() {
 		for (int suit = Card.DIAMONDS; suit <= Card.SPADES; suit++) {
 			for (int rank = Card.ACE; rank <= Card.KING; rank++) {
@@ -24,10 +26,12 @@ public class Deck {
 		}
 	}
 
+	//gets the card of the corresponding suit and rank
 	public Card getCard(int suit, int rank) {
 		return (Card) cards.get(suit+""+rank);
 	}
 	
+	//mixing the cards (shuffle)
 	public Dictionary<String, Card> shuffle() {
 		
 		LinkedList<String> suit;
