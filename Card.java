@@ -5,14 +5,12 @@ public class Card {
 	private int suit;
 
 	// Suits
-	
 	public final static int DIAMONDS = 1;
 	public final static int CLUBS = 2;
 	public final static int HEARTS = 3;
 	public final static int SPADES = 4;
 
 	// Ranks
-	
 	public final static int ACE = 1;
 	public final static int DEUCE = 2;
 	public final static int THREE = 3;
@@ -27,39 +25,46 @@ public class Card {
 	public final static int QUEEN = 12;
 	public final static int KING = 13;
 
+	//setting the rank to the given rank and the suit to the given suit of the card
 	public Card(int rank, int suit) {
 		setRank(rank);
 		setSuit(suit);
 	}
 
+	//gets the suit
 	public int getSuit() {
 		return suit;
 	}
 	
+	//sets the suit to the given suit after checking its availabiliy
 	public void setSuit(int suit) {
 		if(isValidSuit(suit)) {
 			this.suit = suit;
 		}
 	}
 
+	//gets the rank
 	public int getRank() {
 		return rank;
 	}
 	
+	//sets the rank to the given rank after checking its availability
 	public void setRank(int rank) {
 		if(isValidRank(rank)) {
 			this.rank = rank;
 		}
 	}
 	
+	//checks whether the rank is valid or not
 	public static boolean isValidRank(int rank) {
 		return (ACE <= rank && rank <= KING);
 	}
 
+	//checks whether the rank is valid or not
 	public static boolean isValidSuit(int suit) {
 		return (DIAMONDS <= suit && suit <= SPADES);
 	}
-
+	//giving each rank its proper name
 	public static String rankToString(int rank) {
 		switch (rank) {
 		case ACE:
@@ -93,6 +98,7 @@ public class Card {
 		}
 	}
 
+	//giving each suit its proper name
 	public static String suitToString(int suit) {
 		switch (suit) {
 		case DIAMONDS:
